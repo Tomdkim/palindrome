@@ -1,20 +1,20 @@
 import sys
 
-def main(word):
-    length = len(word)
+def main(char_array):
+    length = len(char_array)
     myDict = {}
-    num_of_values = 0
+    num_of_chars = 0
     for i in range(0,length):
-        char = word[i]
+        char = char_array[i]
         if (char not in myDict):
             myDict[char] = 1
-            num_of_values += 1
+            num_of_chars += 1
         else:
             count = myDict[char]
             myDict[char] = count+1
     num_of_odd_chars = 0
     vals = list(myDict.values())
-    for i in range(0, num_of_values):
+    for i in range(0, num_of_chars):
         if (vals[i] % 2 == 1):
             num_of_odd_chars += 1
     if (length % 2 == 0 and num_of_odd_chars != 0):
